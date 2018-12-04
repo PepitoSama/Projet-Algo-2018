@@ -1,40 +1,47 @@
 import Foundation
 
-//Le type Reserve est une collection d'elements de type Piece
-//Cette collection peut être parcourue par un itérateur.
-protocol ReserveProtocol : Sequence{
-associatedtype IteratorNamePiece : IteratorProtocol where IteratorNamePiece.Element == String
+  //Le type Reserve est une collection d'elements de type Piece
+  //Cette collection peut être parcourue par un itérateur.
+  protocol ReserveProtocol : Sequence{
+  associatedtype IteratorReserve : IteratorProtocol where IteratorReserve.Element == String
 
-// init : -> [Piece]
-// Crée une réserve, vide au début
-// Pre : le joueur passé en paramètre ne possède pas de reserve
-init()
+  // init : -> Reserve
+  // Crée une réserve, vide au début
+  // Pre : le joueur passé en paramètre ne possède pas de reserve
+  init()
 
-// searchPiece : Piece -> Boolean
-// Cherche une piece dans la réserve et renvoie True si elle y est, False sinon
-// Pre : La piece passée en paramètre existe
-func searchPiece( piece : Piece) -> Bool
+  // searchPiece : Reserve x Piece -> Boolean
+  // Cherche une piece dans la réserve et renvoie True si elle y est, False sinon
+  // Pre : La piece passée en paramètre existe
+  func searchPiece(piece: Piece) -> Bool
 
-// getPieceReserve : -> Piece
-// Récupère une piece de la réserve,
-// Pre : La piece existe
-func getPieceReserve() -> Piece
+  // getPieceReserve : String -> Piece
+  // Récupère une piece de la réserve à partir d'un nom de Piece
+  func getPieceReserve(nomPiece: String) -> Piece
 
-// getPiecesReserve : -> ([Piece] | Vide)
-// Renvoie les piece de la reserve du joueur
-func getPiecesReserve() -> [Piece]
+  //addPiece : Reserve x Piece -> Reserve
+  // Ajoute une piece dans la réserve
+  // Pre : La piece passée en paramètre existe
+  // Pre : La réserve associée a été initialisée
+  @discardableResult
+  mutating func addPiece(piece: Piece) -> Self
 
-//addPiece : Piece ->
-// Ajoute une piece dans la réserve
-// Pre : La piece passée en paramètre existe
-mutating func addPiece(piece: Piece)
+  // removePiece : Reserve x Piece -> Reserve
+  // Retire la piece de la réserve
+  // Si la réserve est vide, renvoie une erreur
+  // Pre : la piece existe et est contenue dans la réserve
+  @discardableResult
+  mutating func removePiece (piece: Piece) throws -> Self
 
-// removePiece : Piece ->
-// Retire la piece de la réserve
-// Pre : la piece existe et est contenue dans la réserve
-mutating func removePiece (piece: Piece)
+  // makeItReserve : Reserve -> IteratorReserve
+  // crée un itérateur sur la collection dans l'ordre alphabétique des pièces présentes dans la réserve
+  func makeItReserve() -> IteratorReserve
 
-// makeItNamePiece : Reserve -> IteratorNamePiece
-// crée un itérateur sur la collection dans l'ordre alphabétique des pièces
+  }
 
-}
+// Tests Unitaires
+
+// init()
+// P1 :
+
+//
