@@ -14,7 +14,7 @@ import Foundation
   // Verifie si la réserve est vide
   // Pre : la reserve existe
   func isEmpty() -> Bool
-
+    
   // searchPiece : Reserve x Piece -> Boolean
   // Cherche une piece dans la réserve et renvoie True si elle y est, False sinon
   // Pre : La piece passée en paramètre existe
@@ -38,6 +38,12 @@ import Foundation
   @discardableResult
   mutating func removePiece (piece: Piece) throws -> Self
 
+  // count : Reserve -> Int
+  // Compte le nombre de Piece dans la Réserve, si elle est vide, renvoie 0
+  // Pre : Le plateau a été initialisé, ainsi que le joueur
+  // Post : L'entier renvoyé correspond au nombre de Piece dans la réserve
+  func count() -> Int
+    
   // makeItReserve : Reserve -> IteratorReserve
   // crée un itérateur sur la collection dans l'ordre alphabétique des pièces présentes dans la réserve
   func makeItReserve() -> IteratorReserve

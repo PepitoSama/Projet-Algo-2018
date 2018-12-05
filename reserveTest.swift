@@ -1,20 +1,24 @@
-//
 //  reserveTest.swift
-//  
-//
-//  Created by Amjad MENOUER on 05/12/2018.
-//
-//
 
-import XCTest
-@testable import YokaiNo //on verra plus tard pour le nom du package
+import reserveProtocol
+@testable import reserveProtocol
 
 final class reserveTest: XCTestCase {
-    func testInit() {
-        
+    
+    // Test 1 : On vérifie que la fonction init() crée bien un objet de type Réserve
+    func test1Init() -> Bool {
+        var reserveTest : Reserve = new Reserve()
+        if reserveTest return true
+        else return false
+    }
+    // Test 2 : On vérifie que la fonction init() crée bien une Réserve Vide
+    func test2Init() -> Bool {
+        var reserveTest : Reserve = new Reserve()
+        if reserveTest.isEmpty() return true
+        else return false
     }
     
-    func isEmpty() -> Bool
+    func testIsEmpty() -> Bool
     
     func searchPiece(piece: Piece) -> Piece
     
