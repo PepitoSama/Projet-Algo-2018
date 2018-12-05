@@ -14,7 +14,7 @@ import Foundation
   // Verifie si la réserve est vide
   // Pre : la reserve existe
   func isEmpty() -> Bool
-    
+
   // searchPiece : Reserve x Piece -> Boolean
   // Cherche une piece dans la réserve et renvoie True si elle y est, False sinon
   // Pre : La piece passée en paramètre existe

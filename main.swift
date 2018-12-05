@@ -42,14 +42,14 @@ func main() {
 	// Demander nom aux joueurs (ou pas)
 	var monPlateau = Plateau(3,6, player1Name, player2Name)
 
-	while aPerdu(monPlateau) == nil {
+	while monPlateau.aPerdu(monPlateau) == nil {
 		//------ [CHOIX DE L'ACTION] ----------
 		print("C'est le tour de ") + monPlateau.getJoueurActif().getName()
 		print("Quel action voulez vous faire ?")
 		print("1. Déplacer un piece")
 		print("2. Parachuter une piece")
 		while !validChoice(choice, monPlateau) {
-			if (let action = Int(readLine()) && validChoice(choice, monPlateau)){
+			if let action = Int(readLine()) && validChoice(choice, monPlateau) {
 				//------ [ACTION] ---------------------
 				if (choice == 1) {
 					var fromX : Int?
@@ -75,7 +75,10 @@ func main() {
 									if let toX = Int(readLine()) {
 										print("Position Y de la case de destination")
 										if let toY = Int(readLine()) {
-											if movePiece(toX, toY) {
+											// Si la nouvelle case est occupée par le joueur recommencer
+											// Si la nouvelle case est occupée par l'ennemie capturer
+											// SI la nouvelle case est vide bouger
+											if p.bouger(toX, toY) {
 												didHeMove = true
 											}
 											else {
@@ -105,15 +108,60 @@ func main() {
 				}
 
 				else if (choice == 2) {
+					var i = 0
 					print("Votre reserve : ")
-					if let pieces = monPlateau.getJoueurActif().getPiecesReserve(){
+					if let pieces = monPlateau.getJoueurActif().getReserve(){
+						for piece in pieces {
+							print(i+"\n")
+							print(showPiece(piece))
+							i++
+						}
+						print("Quelle piece voulez vous prendre ?")
+						var didHeMove : Bool = false
+						while (!didHeMove){
+							if let noPiece = Int(readLine()) {
+								if let selectedPiece = pieces[noPiece] {
+									print("Piece selectionnée : ")
+									print(showPiece(selectedPiece))
+									print("Ou voulez vous la déposer ?")
 
+										print("Position X de la case de destination")
+										if let toX = Int(readLine()) {
+											print("Position Y de la case de destination")
+											if let toY = Int(readLine()) {
+												// Si la case est occupée
+												if selectedPiece.bouger(toX, toY) {
+													didHeMove = true
+												}
+												else {
+													print("Impossible de bouger la piece dans cette case, recommencez")
+												}
+											}
+											else {
+												print ("Destination Y de la piece Invalide")
+											}
+										}
+										else {
+											print ("Destination X de la piece Invalide")
+										}
+									}
+									else {
+										print("Piece non valide")
+									}
+								}
+								else {
+									print("numéro invalide")
+								}
+							}
+						}
+						else {
+							print ("Cette piece n'existe pas ressayez")
+						}
 					}
 					else {
 						print("Est vide")
 					}
 				}
-			}
 			else {
 				print ("Action non valable")
 			}

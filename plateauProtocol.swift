@@ -1,6 +1,6 @@
 import Foundation
 
-//Le type plateau est un type particulier qui va contenir 
+//Le type plateau est un type particulier qui va contenir
 // Aucun itérateur ne sera utilisé pour ce type
 protocol PlateauProtocol : Sequence{
 
@@ -34,12 +34,28 @@ func validToPosition(fromX: Int, fromY: Int, toX: Int, toY: Int) -> Bool
 func getPieceFromPosition(coordX: Int, coordY: Int) -> Piece
 
 // getJoueurActif : Plateau -> Joueur
+// Renvoie le Joueur Actif
 func getJoueurActif() -> Joueur
-    
+
+// getJoueurActif : Plateau -> Joueur
+// Renvoie le Joueur Passif
+func getJoueurPassif() -> Joueur
+
 // rotateJoueurs : Plateau -> Self
 // Permet de changer l'état des joueurs, échange les deux joueurs
 // L'un devient actif pendant que l'autre passe en inactif
 // Post : le joueur actif ne l'est plus, et le joueur qui ne l'était pas devient le joueur actif
 func rotateJoueurs() -> Self
-    
+
+// capturer : Piece ->
+// Supprime les positions X Y de la piece
+// Change le joueur proprietaire (Si c'est 1 passe a 2, Si c'est 2 passe a 1)
+// Place la piece dans la Reserve du dit Joueur
+// post : la pièce n'est plus sur le plateau
+func capturer()
+
+// Renvoie l'id du Joueur ayant aPerdu
+// Renvoie Vide si personne n'a perdu
+func aPerdu() -> Int?
+
 }
