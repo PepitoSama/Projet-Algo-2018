@@ -1,8 +1,12 @@
-//
 //  plateauTest.swift
-//  
-//
-//  Created by Amjad Menouer on 12/5/18.
-//
 
 import Foundation
+@testable import plateauProtocol
+
+final class plateauTest: XCTestCase {
+    func testInit() -> Bool {
+        if self.init() {
+            return true
+        }
+    }
+}
