@@ -3,13 +3,18 @@ import Foundation
   //Le type Reserve est une collection d'elements de type Piece
   //Cette collection peut être parcourue par un itérateur.
   protocol ReserveProtocol : Sequence{
-  associatedtype IteratorReserve : IteratorProtocol where IteratorReserve.Element == String
+  associatedtype IteratorReserve : IteratorProtocol //where IteratorReserve.Element == String
 
   // init : -> Reserve
   // Crée une réserve, vide au début
   // Pre : le joueur passé en paramètre ne possède pas de reserve
   init()
 
+  // isEmpty : Reserve -> Boolean
+  // Verifie si la réserve est vide
+  // Pre : la reserve existe
+  func isEmpty() -> Bool
+    
   // searchPiece : Reserve x Piece -> Boolean
   // Cherche une piece dans la réserve et renvoie True si elle y est, False sinon
   // Pre : La piece passée en paramètre existe
@@ -38,10 +43,3 @@ import Foundation
   func makeItReserve() -> IteratorReserve
 
   }
-
-// Tests Unitaires
-
-// init()
-// P1 :
-
-//

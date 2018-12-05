@@ -3,8 +3,6 @@ import Foundation
 //Le type plateau est une collection qui va contenir 
 //itérateur ?
 protocol PlateauProtocol : Sequence{
-associatedtype IteratorCase : IteratorProtocol where IteratorCase.Element == String
-
 
 // initPlateau : Int x Int x String x String-> Plateau
 // Les paramètre donnés sont la coordonnées X et Y max respectivement
@@ -35,8 +33,9 @@ func validToPosition(fromX: Int, fromY: Int, toX: Int, toY: Int) -> Bool
 //
 func getPieceFromPosition(coordX: Int, coordY: Int) -> Piece
 
-// makeItPlateau : Plateau -> IteratorCase
-// Crée un itérateur pour la collection Plateau permettant de parcourir le plateau case par case
-func makeItPlateau() -> IteratorCase
-
+// getJoueurActif : Plateau -> Joueur
+func getJoueurActif() -> Joueur
+    
+// rotateJoueur : 
+    
 }

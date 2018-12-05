@@ -5,7 +5,7 @@ func validChoice(choice : Int?, plateau : Plateau) -> Bool {
 	if (choice != 1 || choice != 2)  {
 		return false
 	}
-	else if (choice == 2 && plateau.countReserve(monPlateau.getActif) <= 0) {
+	else if (choice == 2 && plateau.countReserve(monPlateau.getJoueurActif) <= 0) {
 		return false
 	}
 	else {
