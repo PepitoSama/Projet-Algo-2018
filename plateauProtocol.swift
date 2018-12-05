@@ -1,7 +1,7 @@
 import Foundation
 
-//Le type plateau est une collection qui va contenir 
-//itérateur ?
+//Le type plateau est un type particulier qui va contenir 
+// Aucun itérateur ne sera utilisé pour ce type
 protocol PlateauProtocol : Sequence{
 
 // initPlateau : Int x Int x String x String-> Plateau
@@ -36,6 +36,10 @@ func getPieceFromPosition(coordX: Int, coordY: Int) -> Piece
 // getJoueurActif : Plateau -> Joueur
 func getJoueurActif() -> Joueur
     
-// rotateJoueur : 
+// rotateJoueurs : Plateau -> Self
+// Permet de changer l'état des joueurs, échange les deux joueurs
+// L'un devient actif pendant que l'autre passe en inactif
+// Post : le joueur actif ne l'est plus, et le joueur qui ne l'était pas devient le joueur actif
+func rotateJoueurs() -> Self
     
 }
