@@ -14,23 +14,23 @@ init()
 //getJoueur Piece -> Joueur 
 //récupere le joueur possédant la pièce passée en paramètre 
 //le renvoi
-func getJoueur(){} 
+func getJoueur(joueur : Joueur){} -> int
 
 //setJoueur Joueur x Piece -> Joueur
 //attribut une piece à un joueur 
 //le renvoi
-func setJoueur(){}
+func setJoueur( joueur : Joueur, piece : Piece){} -> Joueur
 
 //getJoueurActif Plateau -> Joueur 
 //récupère depuis un objet plateau le joueur "actif", soit le joueur jouant son tour 
 //le renvoi
-func getJoueurActif(){}
+func getJoueurActif(monPlateau : Plateau){} -> Joueur
 
 //getName Joueur -> String
 //recupère le nom du joueur passé en paramètre et le renvoi sous forme de String 
-func getName(){}
+func getName(joueur : Joueur){} -> String
 
 //capturer Joueur x Piece -> Joueur 
 //pré : la pièce en paramètre n'appartient pas au joueur 
 //post : la pièce est desormais dans la reserve du joueur passé en paramètre, elle n'est plus sur le plateau
-func capturer(){}
+func capturer(joueur : Joueur, piece : Piece){}
