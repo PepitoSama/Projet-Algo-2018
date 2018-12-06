@@ -34,7 +34,8 @@ func getName(joueur : Joueur){} -> String
 // capturer Joueur x Piece -> Joueur
 // pré : la pièce en paramètre n'appartient pas au joueur
 // post : la pièce est desormais dans la reserve du joueur passé en paramètre, elle n'est plus sur le plateau
-func capturer(joueur : Joueur, piece : Piece){}
+// donc la position de la pièce capturé passe à vide 
+func capturer(joueur : Joueur, piece : Piece){} -> Joueur  
 
 // Renvoie la reserve du joueur
 func getReserve() -> Reserve
