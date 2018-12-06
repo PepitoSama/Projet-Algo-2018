@@ -46,6 +46,10 @@ import Foundation
     // Récupère le joueur actif pour ce tour
     func getJoueurActif() -> Joueur
         
+    // getJoueurPassif : Plateau -> Joueur
+    // Récupère le joueur passif pour ce tour
+    func getJoueurPassif() -> Joueur
+        
     // rotateJoueurs : Plateau -> Self
     // Permet de changer l'état des joueurs, échange les deux joueurs
     // L'un devient actif pendant que l'autre passe en inactif
@@ -61,9 +65,9 @@ import Foundation
     @discardableResult
     func capturer(piece: Piece) -> Self
     
-    // aPerdu : Plateau -> (Int | Vide)
-    // Renvoie l'id du Joueur ayant aPerdu
+    // aPerdu : Plateau x Joueur -> (Int | Vide)
+    // Renvoie l'id du Joueur ayant perdu
     // Renvoie Vide si personne n'a perdu
-    func aPerdu() -> Int?
+    func aPerdu(joueur: Joueur) -> Int?
     
 }
