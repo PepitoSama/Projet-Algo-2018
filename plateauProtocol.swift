@@ -61,7 +61,7 @@ import Foundation
     @discardableResult
     func capturer(piece: Piece) -> Self
     
-    // aPerdu : Plateau
+    // aPerdu : Plateau -> (Int | Vide)
     // Renvoie l'id du Joueur ayant aPerdu
     // Renvoie Vide si personne n'a perdu
     func aPerdu() -> Int?
