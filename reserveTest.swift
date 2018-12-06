@@ -4,11 +4,12 @@ import Foundation
 @testable import reserveProtocol
 
 final class reserveTest: XCTestCase {
+associatedtype Reserve
+associatedtype Piece
     
     // Test 1 : On vérifie que la fonction init() crée bien un objet de type Réserve
     func test1Init() -> Bool {
-        var reserveTest = new Reserve()
-        if reserveTest {
+        if let reserveTest = Reserve() {
             return true
         }
         else {
@@ -18,7 +19,7 @@ final class reserveTest: XCTestCase {
     
     // Test 2 : On vérifie que la fonction init() crée bien une Réserve Vide
     func test2Init() -> Bool {
-        var reserveTest = new Reserve()
+        let reserveTest = Reserve()
         if reserveTest.isEmpty() {
             return true
         }
@@ -31,7 +32,7 @@ final class reserveTest: XCTestCase {
     func testSearchPiece(piece: Piece) -> Piece {
         if self.isEmpty() {
             return nil
-        }else
+        }else{}
     }
     
     //

@@ -5,10 +5,12 @@ import Foundation
     // On pourra récupérer les informations de chaque case, savoir s'il y a une piece dessus, et le joueur a qui elle appartient
     // Aucun itérateur ne sera utilisé pour ce type (inutile)
     protocol PlateauProtocol : Sequence{
+    associatedtype Piece
+    associatedtype Joueur
 
     // initPlateau : Int x Int x String x String -> Plateau
     // Les paramètre donnés sont la coordonnées X et Y max respectivement
-    // Creer les joueurs avec les id 1 et 2 et les nom passé en paramère
+    // Creer les joueurs avec les id 1 et 2 et les noms passé en paramère
     init(xmax: Int, ymax: Int, name1: String, name2: String)
 
     // getCase : Plateau x Joueur x Joueur x Int x Int -> String
@@ -24,13 +26,6 @@ import Foundation
     // Affiche des x ou la piece ne peut pas se déplacer
     @discardableResult
     func getCase(joueur1: Joueur, joueur2: Joueur, coordX: Int, coordY: Int) -> String
-        
-    // capturer Joueur x Piece -> Joueur
-    // pré : la pièce en paramètre n'appartient pas au joueur
-    // post : la pièce est desormais dans la reserve du joueur passé en paramètre, elle n'est plus sur le plateau
-    // donc la position de la pièce capturé passe à vide 
-    func capturer(joueur : Joueur, piece : Piece){} -> Joueur  
-
 
     // validFromPosition : Plateau x Joueur x Int x Int -> Boolean
     // Renvoie True si le joueur possède une piece aux coordonnées indiquées
@@ -73,7 +68,6 @@ import Foundation
     func capturer(piece: Piece) -> Self
 
     // aPerdu : Plateau x Joueur x Joueur -> (Int | Vide)
-    // La fonction va calculer quel joueur a perdu en fonction des conditions de victoire du jeu
     // Renvoie l'id du Joueur ayant perdu
     // Renvoie Vide si personne n'a perdu
     func aPerdu() -> Int?
