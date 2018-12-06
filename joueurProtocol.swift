@@ -8,7 +8,7 @@ import Reserve
 //Le type joueur va contenir en variable ( ou constante ) le nom du joueur ainsi que son numero
 //Et un objet reserve, contentant les objet piece étant dans la reserve du joueur courant
 protocol JoueurProtocol : Sequence {
-    associatedtype Reserve
+    associatedtype Reserve : Reserve
 
 // initJoueur : -> Joueur
 // Creation d'un joueur :

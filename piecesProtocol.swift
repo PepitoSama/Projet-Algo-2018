@@ -27,7 +27,21 @@
 //              - En Haut a gauche
 //              - En Haut a droite
 
-init()
+import Joueur
+import Piece
+import Plateau
+import Face
+import Reserve
 
-// Recupère une piece parmis celles possibles
-getPiece(nomPiece : String) -> Piece?
+//Le type Piece va contenir en variable ( ou constante ) les deux faces
+protocol PieceProtocol : Sequence {
+    associatedtype Piece : Piece
+    
+    //initPieces : -> Pieces
+    // constructeur
+    init()
+
+    //getPiece : String -> Piece | Vide
+    // Recupère une piece parmis celles possibles
+    func getPiece(nomPiece : String) -> Piece?
+}

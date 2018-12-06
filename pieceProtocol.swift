@@ -1,38 +1,53 @@
-import Foundation
+import Joueur
+import Pieces
+import Plateau
+import Face
+import Reserve
 
 //Le type Piece va contenir en variable ( ou constante ) les deux faces 
 protocol PieceProtocol : Sequence {
-  
-init(face1 : Face, face2 : Face)
+    associatedtype Face : Face
 
+    // initPiece : -> Piece
+    init(face1 : Face, face2 : Face)
 
-// Renvoie toute les cases accessibles à la piece  sous forme de liste de string
-func getCasesAccessibles() -> [String]
+    // getCasesAccessibles : Piece -> [String]
+    // Renvoie toute les cases accessibles à la piece  sous forme de liste de string
+    func getCasesAccessibles() -> [String]
 
-// Renvoie la coordonnée X de la Piece
-func getX
+    // getX : Piece -> Int
+    // Renvoie la coordonnée X de la Piece
+    func getX() -> Int
 
-// Renvoie la coordonnée Y de la piece
-func getY
+    // getY : Piece -> Int
+    // Renvoie la coordonnée Y de la piece
+    func getY() -> Int
 
-// Renvoie la face active
-func getFaceActive() -> Face
+    // getFaceActive : Piece -> Face
+    // Renvoie la face active
+    func getFaceActive() -> Face
 
-// Renvoie la face passive
-func getFacePassive() -> Face
+    // getFacePassive : Piece -> Face
+    // Renvoie la face passive
+    func getFacePassive() -> Face
 
-// Modifie la face active
-func setFaceActive(face : Face) ->
+    // setFaceActive : Piece x Face -> Piece
+    // Modifie la face active
+    func setFaceActive(face : Face) -> Self
 
-// Modifie la face passive
-func setFacePassive(face : Face) ->
+    // setFacePassive : Piece x Face -> Piece
+    // Modifie la face passive
+    func setFacePassive(face : Face) -> Self
 
-// Evolue si passe la ligne
-// Capture si case occupée par l'ennemie
-// Renvoie True si succes
-// Renvoie false si case occupée
-func bouger(x : Int, y : Int) -> Bool
+    // bouger : Piece x Int x Int -> Bool
+    // Evolue si passe la ligne
+    // Capture si case occupée par l'ennemie
+    // Renvoie True si succes
+    // Renvoie false si case occupée
+    func bouger(x : Int, y : Int) -> Bool
 
-// getJoueur : Piece -> Int
-// Renvoie l'id du Joueur possedant la piece
-func getJoueur() -> Int
+    // getJoueur : Piece -> Int
+    // Renvoie l'id du Joueur possedant la piece
+    func getJoueur() -> Int
+    
+}
