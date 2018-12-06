@@ -1,11 +1,15 @@
 //  reserveTest.swift
 
-import Foundation
+import Piece
+import Pieces
+import Joueur
+import Face
+import Plateau
 @testable import reserveProtocol
 
 final class reserveTest: XCTestCase {
-associatedtype Reserve
-associatedtype Piece
+    typealias Reserve
+    typealias Piece
     
     // Test 1 : On vérifie que la fonction init() crée bien un objet de type Réserve
     func test1Init() -> Bool {
@@ -50,15 +54,7 @@ associatedtype Piece
     }
     
     //
-    func test2AddPiece(piece: Piece) -> Int {
-        if self.addPiece(piece: Piece){
-            return self.count()+1
-        }else {
-            return self.count()
-        }
-    }
-    
-    mutating func removePiece (piece: Piece) throws -> Self
+    func removePiece (piece: Piece) throws -> Self
     
     //
     func testCount() -> Bool {

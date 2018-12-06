@@ -1,4 +1,8 @@
-import Foundation
+import Piece
+import Pieces
+import Joueur
+import Face
+import Plateau
 
   //Le type Reserve est une collection d'elements de type Piece
   //Cette collection peut être parcourue par un itérateur.

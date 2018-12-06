@@ -1,3 +1,9 @@
+import Plateau
+import Reserve
+import Joueur
+import Piece
+import Pieces
+import Face
 
 // Renvoie True si l'action est possible
 func validChoice(choice : Int?, plateau : Plateau) -> Bool {
