@@ -21,7 +21,8 @@ import Foundation
   func searchPiece(piece: Piece) -> Bool
 
   // getPieceReserve : String -> Piece
-  // Récupère une piece de la réserve à partir d'un nom de Piece
+  // Récupère une piece de la réserve à partir d'un nom de Piece, si deux piece sont du même type 
+  // 
   func getPieceReserve(nomPiece: String) -> Piece
 
   //addPiece : Reserve x Piece -> Reserve
