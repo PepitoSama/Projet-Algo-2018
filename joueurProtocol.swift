@@ -12,11 +12,6 @@ protocol JoueurProtocol : Sequence {
 // Une reserve Vide
 init(name : String, id : int)
 
-// getJoueurActif Plateau -> Joueur
-// récupère depuis un objet plateau le joueur "actif", soit le joueur jouant son tour
-// le renvoi
-func getJoueurActif(monPlateau : Plateau){} -> Joueur
-
 // getName Joueur -> String
 // recupère le nom du joueur passé en paramètre et le renvoi sous forme de String
 func getName(joueur : Joueur){} -> String
@@ -24,3 +19,7 @@ func getName(joueur : Joueur){} -> String
 // Renvoie la reserve du joueur
 // Pre : le joueur passé en paramètre possède une reserve 
 func getReserve() -> Reserve
+
+// getId Joueur -> Int 
+// renvoi l'id du joueur passé en paramètre 
+func getId(joueur : Joueur) -> int 
