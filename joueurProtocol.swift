@@ -13,13 +13,13 @@ protocol JoueurProtocol : Sequence {
 init(name : String, id : int)
 
 // getName Joueur -> String
-// recupère le nom du joueur passé en paramètre et le renvoi sous forme de String
-func getName(joueur : Joueur){} -> String
+// recupère le nom du joueur et le renvoi sous forme de String
+func getName(){} -> String
 
 // Renvoie la reserve du joueur
-// Pre : le joueur passé en paramètre possède une reserve 
+// Pre : le joueur passé en paramètre possède une reserve
 func getReserve() -> Reserve
 
-// getId Joueur -> Int 
-// renvoi l'id du joueur passé en paramètre 
-func getId(joueur : Joueur) -> int 
+// getId Joueur -> Int
+// renvoi l'id du joueur passé en paramètre
+func getId(joueur : Joueur) -> int
