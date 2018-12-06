@@ -34,10 +34,10 @@ func main() {
 	//-------------- [INITIALISATION PARTIE] ------
 	var player1Name : String
 	var player2Name : String
-	print ("Nom du joueur 1")
-	player1Name = "Pepito"
-	print ("Nom du joueur 2")
-	player2Name = "Baptiste"
+	print ("Nom du joueur 1:")
+	player1Name = readLine()
+	print ("Nom du joueur 2:")
+	player2Name = readLine()
 	var choice : Int? = nil
 	// Demander nom aux joueurs (ou pas)
 	var monPlateau = Plateau(3,6, player1Name, player2Name)
