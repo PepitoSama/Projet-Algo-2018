@@ -73,6 +73,7 @@ import Foundation
     func capturer(piece: Piece) -> Self
 
     // aPerdu : Plateau x Joueur x Joueur -> (Int | Vide)
+    // La fonction va calculer quel joueur a perdu en fonction des conditions de victoire du jeu
     // Renvoie l'id du Joueur ayant perdu
     // Renvoie Vide si personne n'a perdu
     func aPerdu() -> Int?
