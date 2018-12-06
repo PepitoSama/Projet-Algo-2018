@@ -1,5 +1,8 @@
-// TODO : En faire un protocole
-// Initialisation d'une piece
+import Foundation
+
+//Le type Piece va contenir en variable ( ou constante ) les deux faces 
+protocol PieceProtocol : Sequence {
+  
 init(face1 : Face, face2 : Face)
 
 
