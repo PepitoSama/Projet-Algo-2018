@@ -6,10 +6,10 @@ import Foundation
     // Aucun itérateur ne sera utilisé pour ce type (inutile)
     protocol PlateauProtocol : Sequence{
 
-    // initPlateau : Int x Int x String x String-> Plateau
+    // initPlateau : Int x Int x String x String -> Plateau
     // Les paramètre donnés sont la coordonnées X et Y max respectivement
     // Creer les joueurs avec les id 1 et 2 et les nom passé en paramère
-    init()
+    init(xmax: Int, ymax: Int, name1: String, name2: String)
 
     // getCase : Plateau x Joueur x Joueur x Int x Int -> String
     // Renvoie sous forme de string la piece, si il y en a une, sur la case donnée en paramètre
