@@ -48,6 +48,7 @@ func main() {
 		print("Quel action voulez vous faire ?")
 		print("1. Déplacer un piece")
 		print("2. Parachuter une piece")
+		//Revoir le système de validChoice() => je crois qu'il sheitan sévère, faudra relire cette partie
 		while !validChoice(choice, monPlateau) {
 			if let action = Int(readLine()) && validChoice(choice, monPlateau) {
 				//------ [ACTION] ---------------------
