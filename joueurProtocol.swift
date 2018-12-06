@@ -10,17 +10,7 @@ protocol JoueurProtocol : Sequence {
 // un id
 // Les pieces de base (accessible via Pieces) positionnée
 // Une reserve Vide
-init()
-
-// getJoueur Piece -> Joueur
-// récupere le joueur possédant la pièce passée en paramètre
-// le renvoi
-func getJoueur(joueur : Joueur){} -> int
-
-// setJoueur Joueur x Piece -> Joueur
-// attribut une piece à un joueur
-// le renvoi
-func setJoueur( joueur : Joueur, piece : Piece){} -> Joueur
+init(name : String, id : int)
 
 // getJoueurActif Plateau -> Joueur
 // récupère depuis un objet plateau le joueur "actif", soit le joueur jouant son tour
@@ -32,4 +22,5 @@ func getJoueurActif(monPlateau : Plateau){} -> Joueur
 func getName(joueur : Joueur){} -> String
 
 // Renvoie la reserve du joueur
+// Pre : le joueur passé en paramètre possède une reserve 
 func getReserve() -> Reserve
