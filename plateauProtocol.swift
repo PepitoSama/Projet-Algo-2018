@@ -50,11 +50,11 @@ import Reserve
 
     // getJoueurActif : Plateau -> Joueur
     // Récupère le joueur actif pour ce tour
-    func getJoueurActif() -> Joueur
+    func getJoueurActif() throws -> Joueur
 
     // getJoueurPassif : Plateau -> Joueur
     // Récupère le joueur passif pour ce tour
-    func getJoueurPassif() -> Joueur
+    func getJoueurPassif() throws -> Joueur
 
     // rotateJoueurs : Plateau -> Self
     // Permet de changer l'état des joueurs, échange les deux joueurs

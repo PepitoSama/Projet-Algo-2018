@@ -8,7 +8,6 @@ import Reserve
 @testable import plateauProtocol
 
 final class plateauTest: XCTestCase {
-typealias Plateau
     
     // Test 1 : Si le plateau a bien été créé, on retourne vrai, sinon faux
     func testInit() -> Bool {
@@ -80,17 +79,15 @@ typealias Plateau
     }
     
     // Test 6 : Si un joueur est renvoyé par la fonction getJoueurActif, on renvoie vrai, sinon on renvoie faux ainsi qu'un message d'erreur
-    func testGetJoueurActif() -> Bool {
+    func testGetJoueurActif() throws -> Bool {
         var x : Int = 14
         var y : Int = 9
         var j1 : String = "Yokai"
         var j2 : String = "Mori"
         let testPlateau = Plateau(x: Int, y: Int, j1: String, j2: String)
         do {
-            try {
-                if testPlateau.testGetJoueurActif()==nil {
-                    return false
-                }
+            try testPlateau.testGetJoueurActif()==nil
+                return false
             }
         } catch fatalError {
             print("Cette fonction ne peut pas renvoyer un élément vide")
@@ -99,17 +96,15 @@ typealias Plateau
     }
     
     // Test 7 : Si un joueur est renvoyé par la fonction getJoueurPassif, on renvoie vrai, sinon on renvoie faux, ainsi qu'un message d'erreur
-    func testGetJoueurPassif() -> Bool {
+    func testGetJoueurPassif() throws -> Bool {
         var x : Int = 14
         var y : Int = 9
         var j1 : String = "Yokai"
         var j2 : String = "Mori"
         let testPlateau = Plateau(x: Int, y: Int, j1: String, j2: String)
         do {
-            try {
-            if testPlateau.testGetJoueurPassif()==nil {
+            try testPlateau.testGetJoueurPassif()==nil
                 return false
-            }
         } catch fatalError {
             print("Cette fonction ne peut pas renvoyer un élément vide")
             return true

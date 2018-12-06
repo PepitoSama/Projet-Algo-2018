@@ -8,11 +8,9 @@ import Plateau
 @testable import reserveProtocol
 
 final class reserveTest: XCTestCase {
-    typealias Reserve
-    typealias Piece
     
     // Test 1 : On vérifie que la fonction init() crée bien un objet de type Réserve
-    func test1Init() -> Bool {
+    func testInit() -> Bool {
         if let reserveTest = Reserve() {
             return true
         }
@@ -22,54 +20,55 @@ final class reserveTest: XCTestCase {
     }
     
     // Test 2 : On vérifie que la fonction init() crée bien une Réserve Vide
-    func test2Init() -> Bool {
+    func testSearchPiece(piece: Piece) -> Bool {
         let reserveTest = Reserve()
-        if reserveTest.isEmpty() {
+        if let reserveTest.searchPiece(piece: Piece) {
             return true
-        }
-        else {
+        }else{
             return false
         }
     }
     
-    //
-    func testSearchPiece(piece: Piece) -> Piece {
-        if self.isEmpty() {
-            return nil
-        }else{}
+    // Test 3 : On verifie que la fonction renvoie bien une piece | vide
+    func testGetPieceReserve(nomPiece: String) -> Bool {
+        let reserveTest = Reserve()
+        if let testGetPieceReserve = reserveTest.testGetPieceReserve(nomPiece: String) {
+            return true
+        } else {
+            return false
+        }
     }
     
-    //
-    func getPieceReserve(nomPiece: String) -> Piece
+    // Test 4 : On vérifie que la piece est bien ajoutée à la réserve
+    func testAddPiece(piece: Piece) -> Bool {
+        let reserveTest = Reserve()
+        if let testAddPiece = reserveTest.testAddPiece(piece: Piece) {
+            return true
+        } else {
+            return false
+        }
+    }
     
-    //
-    func test1AddPiece(piece: Piece) -> Bool {
-        if self.isEmpty() {
-            if self.addPiece(piece: Piece).isEmpty() {
-                return false //cas ou la Reserve est vide alors qu'on vient de rajouter une Piece
-            }
-        }else {
+    // Test 5 : On vérifie que la piece est bien supprimée de la réserve
+    // Vu que l'on ne peut pas supprimer une piece d'une Réserve vide, le test doit nous rediriger vers une ERREUR
+    func testRemovePiece (piece: Piece) throws -> Bool {
+        let reserveTest = Reserve()
+        do {
+            try reserveTest.removePiece(piece: Piece)
+            return false
+        } catch errorElementDoesntExist {
+            print("La Réserve est vide, la fonction ne passe pas le test, donc le test a réussi")
             return true
         }
     }
     
-    //
-    func removePiece (piece: Piece) throws -> Self
-    
-    //
+    // Test 6 : Verifie que la fonction passe le test, et renvoie donc bien un entier représentant le nombre de pieces dans la réserve, ou 0 s'il n'y en a pas.
     func testCount() -> Bool {
-        if self.isEmpty() {
-            if self.count() == 0 {
-                return true
-            } else {
-                return false
-            }
-        }else {
-            if self.count() > 0 {
-                return true
-            }else {
-                return false
-            }
+        let reserveTest = Reserve()
+        if let testCount = reserveTest.testCount() {
+            return true
+        } else {
+            return false
         }
     }
 }
