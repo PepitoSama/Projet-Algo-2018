@@ -1,3 +1,4 @@
+// TODO : En faire un protocole
 // Initialisation d'une piece
 init(face1 : Face, face2 : Face)
 
@@ -29,6 +30,6 @@ func setFacePassive(face : Face) ->
 // Renvoie false si case occupée
 func bouger(x : Int, y : Int) -> Bool
 
-getJoueur : Piece -> Int
-Renvoie l'id du Joueur possedant la piece
+// getJoueur : Piece -> Int
+// Renvoie l'id du Joueur possedant la piece
 func getJoueur() -> Int

@@ -1,7 +1,7 @@
 // Le type piece permet d'avoir acces a toute les pieces possibles
 
 // Initialisation des pieces possibles
-Les pieces de base sont :
+// Les pieces de base sont :
 // 1er face : koropokkuru
 // Peut se déplacer dans tout les sens
 // 2eme face : la même
