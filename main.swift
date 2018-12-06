@@ -42,7 +42,7 @@ func main() {
 	// Demander nom aux joueurs (ou pas)
 	var monPlateau = Plateau(3,6, player1Name, player2Name)
 
-	while monPlateau.aPerdu(monPlateau) == nil {
+	while (monPlateau.aPerdu(monPlateau.getJoueurActif()) == nil) && (monPlateau.aPerdu(monPlateau.getJoueurPassif()) {
 		//------ [CHOIX DE L'ACTION] ----------
 		print("C'est le tour de ") + monPlateau.getJoueurActif().getName()
 		print("Quel action voulez vous faire ?")
