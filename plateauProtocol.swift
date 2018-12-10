@@ -13,19 +13,10 @@ import Foundation
     // Creer les joueurs avec les id 1 et 2 et les noms passé en paramère
     init(xmax: Int, ymax: Int, name1: String, name2: String)
 
-    // getCase : Plateau x Joueur x Joueur x Int x Int -> String
-    // Renvoie sous forme de string la piece, si il y en a une, sur la case donnée en paramètre
-    // Le String renvoyé sera sous cette forme :
-    // > Joueur :
-    // > Nom de la piece :
-    // > coordonnée X : ... coordonnée Y : ...
-    // > ooo
-    // > o o
-    // > ooo
-    // Affiche des o en fonction des déplacements possibles de la piece
-    // Affiche des x ou la piece ne peut pas se déplacer
+    // getCase : Plateau x Joueur x Joueur x Int x Int -> Piece
+    // Renvoie la piece, si il y en a une, sur la case donnée en paramètre
     @discardableResult
-    func getCase(joueur1: Joueur, joueur2: Joueur, coordX: Int, coordY: Int) -> String
+    func getCase(joueur1: Joueur, joueur2: Joueur, coordX: Int, coordY: Int) -> Piece
 
     // validFromPosition : Plateau x Joueur x Int x Int -> Boolean
     // Renvoie True si le joueur possède une piece aux coordonnées indiquées
@@ -63,7 +54,7 @@ import Foundation
     // Supprime les positions X Y de la piece
     // Change le joueur proprietaire (Si c'est 1 passe a 2, Si c'est 2 passe a 1)
     // Place la piece dans la Reserve du dit Joueur
-    // post : la pièce n'est plus sur le plateau
+    // Post : la pièce n'est plus sur le plateau
     @discardableResult
     func capturer(piece: Piece) -> Self
 

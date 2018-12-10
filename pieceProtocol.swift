@@ -1,15 +1,16 @@
 import Foundation
 
-//Le type Piece va contenir en variable ( ou constante ) les deux faces
+//Le type Piece va contenir les deux faces
 protocol PieceProtocol : Sequence {
     associatedtype Face : Face
 
     // initPiece : -> Piece
     init(face1 : Face, face2 : Face)
 
-    // getCasesAccessibles : Piece -> [String]
+    // getCasesAccessibles : Piece x Int x Int-> [String]
     // Renvoie toute les cases accessibles à la piece  sous forme de liste de string
-    func getCasesAccessibles() -> [String]
+    // Post : La case retournée doit appartenir au plateau
+    func getCasesAccessibles(xMax : Int, yMax : Int) -> [String]
 
     // getX : Piece -> Int
     // Renvoie la coordonnée X de la Piece

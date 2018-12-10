@@ -1,15 +1,16 @@
 import Foundation
 
 
-//Le type joueur va contenir en variable ( ou constante ) le nom du joueur ainsi que son numero
+//Le type joueur va contenir le nom du joueur ainsi que son numero
 //Et un objet reserve, contentant les objet piece étant dans la reserve du joueur courant
 protocol JoueurProtocol : Sequence {
     associatedtype Reserve : Reserve
 
 // initJoueur : -> Joueur
 // Creation d'un joueur :
-// Un joueur à : un nom, un id, les pieces de base (accessibles via Pieces) positionnée, et une réserve vide
-init(name : String, id : int)
+// Un joueur à : un nom, un id, les pieces de base (accessibles via pieces)
+// positionnée aux cooredonnées de base, et une réserve vide
+init(name : String, id : int, pieces : Pieces)
 
 // getName: Joueur -> String
 // recupère le nom du joueur et le renvoi sous forme de String

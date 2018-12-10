@@ -29,12 +29,12 @@
 
 import Foundation
 
-//Le type Piece va contenir en variable ( ou constante ) les deux faces
+// Le type Pieces (le s est important) va creer et stoquer toute les pieces existantes du jeu
 protocol PieceProtocol : Sequence {
     associatedtype Piece : Piece
 
-    //initPieces : -> Pieces
-    // constructeur
+    // initPieces : -> Pieces
+    // Creer et stoque toute les pieces possibles du jeu
     init()
 
     //getPiece : String -> Piece | Vide
