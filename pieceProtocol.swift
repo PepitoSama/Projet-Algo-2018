@@ -4,7 +4,7 @@ import Foundation
 protocol PieceProtocol : Sequence {
     associatedtype Face : Face
 
-    // initPiece : -> Piece
+    // initPiece : Face x Face -> Piece
     init(face1 : Face, face2 : Face)
 
     // getCasesAccessibles : Piece x Int x Int-> [String]
@@ -28,13 +28,13 @@ protocol PieceProtocol : Sequence {
     // Renvoie la face passive
     func getFacePassive() -> Face
 
-    // setFaceActive : Piece x Face -> Piece
+    // setFaceActive : Piece x Face -> Face
     // Modifie la face active
-    func setFaceActive(face : Face) -> Self
+    func setFaceActive(face : Face) -> Face
 
-    // setFacePassive : Piece x Face -> Piece
+    // setFacePassive : Piece x Face -> Face
     // Modifie la face passive
-    func setFacePassive(face : Face) -> Self
+    func setFacePassive(face : Face) -> Face
 
     // bouger : Piece x Int x Int -> Bool
     // Evolue si passe la ligne
