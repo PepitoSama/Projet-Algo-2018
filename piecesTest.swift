@@ -1,11 +1,6 @@
 //  piecesTest.swift
-import Piece
-import Joueur
-import Face
-import Plateau
-import Reserve
-
-@testable import piecesProtocol
+import Foundation
+@testable import yokai_no_mori
 final class piecesTest: XCTestCase {
 
     // Test 1 : On teste le constructeur de Pieces

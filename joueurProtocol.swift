@@ -1,8 +1,4 @@
-import Piece
-import Pieces
-import Plateau
-import Face
-import Reserve
+import Foundation
 
 
 //Le type joueur va contenir en variable ( ou constante ) le nom du joueur ainsi que son numero

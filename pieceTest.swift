@@ -1,8 +1,7 @@
 //  pieceTest.swift
 // TODO : Tout
 import Foundation
-import Piece
-@testable import pieceProtocol
+@testable import yokai_no_mori
 
 final class pieceTest: XCTestCase {
 

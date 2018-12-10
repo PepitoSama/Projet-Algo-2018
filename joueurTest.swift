@@ -1,15 +1,10 @@
 //  joueurTest.swift
-import Piece
-import Pieces
-import Plateau
-import Face
-import Reserve
-import Foundation
 
-@testable import joueurProtocol
+import Foundation
+@testable import yokai_no_mori
 
 final class joueurTest : XCTestCase {
-    
+
     // Test 1 : On verifie que le constructeur crée bien un objet de type Joueur
     func testInit(name : String, id : int) -> Bool {
         if let testJoueur = Joueur(name: String, id: int) {
@@ -38,7 +33,7 @@ final class joueurTest : XCTestCase {
             return false
         }
     }
-    
+
     // Test 4 : On verifie que la fonction récupere bien l'id du Joueur (soit 1, soit 2)
     func testGetId() -> Bool {
         let testJoueur = Joueur("Amjad", 1)

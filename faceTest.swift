@@ -1,7 +1,7 @@
 //  faceTest.swift
 
 import Foundation
-@testable import faceProtocol
+@testable import yokai_no_mori
 
 final class faceTest: XCTestCase {
 

@@ -27,16 +27,12 @@
 //              - En Haut a gauche
 //              - En Haut a droite
 
-import Joueur
-import Piece
-import Plateau
-import Face
-import Reserve
+import Foundation
 
 //Le type Piece va contenir en variable ( ou constante ) les deux faces
 protocol PieceProtocol : Sequence {
     associatedtype Piece : Piece
-    
+
     //initPieces : -> Pieces
     // constructeur
     init()

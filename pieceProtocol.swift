@@ -1,10 +1,6 @@
-import Joueur
-import Pieces
-import Plateau
-import Face
-import Reserve
+import Foundation
 
-//Le type Piece va contenir en variable ( ou constante ) les deux faces 
+//Le type Piece va contenir en variable ( ou constante ) les deux faces
 protocol PieceProtocol : Sequence {
     associatedtype Face : Face
 
@@ -49,5 +45,5 @@ protocol PieceProtocol : Sequence {
     // getJoueur : Piece -> Int
     // Renvoie l'id du Joueur possedant la piece
     func getJoueur() -> Int
-    
+
 }

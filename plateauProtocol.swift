@@ -1,8 +1,4 @@
-import Piece
-import Pieces
-import Joueur
-import Face
-import Reserve
+import Foundation
 
     // Le type plateau est un type particulier qui va contenir toute les cases du plateau
     // Il permettra de contenir tout les éléments du jeu, comme les joueurs, leurs réserves ainsi que leur pieces
