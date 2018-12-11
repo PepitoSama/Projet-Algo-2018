@@ -126,7 +126,7 @@ func main() {
 													print("Position Y de la case de destination")
 													if let toY = Int(readLine()) {
 														// Si la case est occupée
-														if selectedPiece.bouger(toX, toY) {
+														if selectedPiece.parachuter(piece, toX, toY) {
 															didHeMove = true
 														} else {
 															print("Impossible de bouger la piece dans cette case, recommencez")

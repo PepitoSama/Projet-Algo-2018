@@ -31,6 +31,14 @@ import Foundation
     // Renvoie false si case occupée
     func bouger(x : Int, y : Int) -> Bool
 
+    // parachuter : Piece x Int x Int -> Bool
+    // N'evolue pas si parachuté derriere la ligne 
+    // Ne peut pas parachuter sur case occupé par une piece quelconque
+    // Retire la piece de la Reserve du Joueur concerné 
+    // Renvoie True si succes
+    // Renvoie false si case occupée
+    func parachuter(piece : Piece, x : Int, y : Int) -> Bool
+
     // validFromPosition : Plateau x Joueur x Int x Int -> Boolean
     // Renvoie True si le joueur possède une piece aux coordonnées indiquées
     // Pre : Les coordonnées entrées sont valides (ne vont pas au dela du plateau)
@@ -65,8 +73,9 @@ import Foundation
 
     // capturer : Plateau x Piece -> Plateau
     // Supprime les positions X Y de la piece
-    // Change le joueur proprietaire (Si c'est 1 passe a 2, Si c'est 2 passe a 1)
     // Place la piece dans la Reserve du dit Joueur
+    // Supprime la piece de la liste des pieces du joueur
+    // Change le joueur proprietaire (Si c'est 1 passe a 2, Si c'est 2 passe a 1)
     // Post : la pièce n'est plus sur le plateau
     @discardableResult
     func capturer(piece: Piece) -> Self
