@@ -20,6 +20,8 @@ fichier PartieProtocol
 - pourquoi faire une fonction "piece1capturePiece2" au lieu de se contenter de "capturer"
   (qui prend en parametre une seule piece)?
   //C'est juste une question sur le choix de la Spe, pas vraiment une remarque
+- verifierChoix : difference de parametre entre la spé et la déclaration
+  (l.430/432)
 
 fichier PieceProtocol
 
@@ -31,3 +33,14 @@ fichier PieceProtocol
 fichier ReserveProtocol : RAS
 
 fichier main.swift
+
+- il faut verifier que le readLine() puisse etre cast : si on tente de changer
+  un string en int, renvoie vide, et on doit gérer le cas ou c'est vide
+- verifierChoix (cf.plus haut) => je crois que ca prend un int et un string en parametre
+  c'est pas dit dans la spe fonctionnelle
+- fonction toStringPiecesDispoDeplacement() n'existe pas dans PartieProtocol
+- fonction toStringPiecesDispoCapture() n'existe pas dans PartieProtocol
+- main : vous avez ecrit getNom, dans le protocole c'est getNomPiece
+- pas de fonction deplacementAutorise dans partie ni de fonction deplacement
+- attention : toStringPieceDispoCapture present sous un autre nom dans Partie
+//Main globalement cohérent sinon
