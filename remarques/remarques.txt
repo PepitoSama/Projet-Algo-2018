@@ -1,0 +1,33 @@
+MENOUER Amjad
+SAIMOND Etienne
+MEGHERAT Adam
+
+--- Remarques sur la Spe Fonctionnelles proposées par Michel RANARIMAHEFA et Rayan BAHROUN ---
+
+fichier CollectionPieceProtocol
+
+- il manque le "throws" a la fin de la déclaration de fonction ajouterCollectionPiece
+- dans la spe : EstDansCollectionPiece renvoie Piece alors que dans la déclaration
+  de la fonction, elle renvoie un booleen
+
+fichier JoueurProtocol : RAS
+
+fichier PartieProtocol
+
+- "init" ne gère pas le cas ou la partie contiendrait 2 joueurs avec le meme nom
+- je ne comprends pas l'utilité de la fonction "getJoueur1", vu qu'on a déjà
+  toute les fonctions permettant de changer le joueur
+- pourquoi faire une fonction "piece1capturePiece2" au lieu de se contenter de "capturer"
+  (qui prend en parametre une seule piece)?
+  //C'est juste une question sur le choix de la Spe, pas vraiment une remarque
+
+fichier PieceProtocol
+
+- revoir la spe de creerPiece, que signifie position ? Il s'agit de quel type ?
+- sinon pas de remarques particulieres
+  //Jeu pas évolutif ? On se contente de certaines Pièces dès le début
+  //Pas de possibilités de voir évoluer le jeu avec de nouvelles pieces
+
+fichier ReserveProtocol : RAS
+
+fichier main.swift
