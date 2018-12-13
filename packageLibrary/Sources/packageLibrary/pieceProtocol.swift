@@ -11,13 +11,6 @@ protocol PieceProtocol : Sequence {
     // initPiece : Face x Face x Int x Int x Int-> Piece
     init(face1 : Face, face2 : Face, x : Int, y : Int, idJoueur : Int?)
 
-    // getCasesAccessibles : Piece x Int x Int-> [String]
-    // Renvoie toute les cases accessibles à la piece  sous forme de liste de string
-    // Post : La case retournée doit appartenir au plateau
-    // Pre : Les entiers en paramètres sont la largeur/longueur du plateau
-    // On pourra l'écrire de cette maniere : piece.getCasesAccessibles(monPlateau.getXMax():Int, monPlateau.getYMax())
-    func getCasesAccessibles(xMax : Int, yMax : Int) -> [String]
-
     // getX : Piece -> Int?
     // Renvoie la coordonnée X de la Piece
     func getX() -> Int?
@@ -41,14 +34,6 @@ protocol PieceProtocol : Sequence {
     // setFacePassive : Piece x Face -> Face
     // Modifie la face passive
     func setFacePassive(face : Face) -> Face
-
-    // bouger : Piece x Int x Int -> Bool
-    // Evolue si passe la ligne
-    // Capture si case occupée par l'ennemie
-    // Renvoie True si succes
-    // Renvoie false si case occupée
-    // Appelée par la fonction "bouger" du type plateau
-    func bouger(x : Int, y : Int) -> Bool
 
     // getJoueur : Piece -> Int | Vide
     // Renvoie l'id du Joueur possedant la piece
