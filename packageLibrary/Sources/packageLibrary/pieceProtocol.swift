@@ -14,6 +14,8 @@ protocol PieceProtocol : Sequence {
     // getCasesAccessibles : Piece x Int x Int-> [String]
     // Renvoie toute les cases accessibles à la piece  sous forme de liste de string
     // Post : La case retournée doit appartenir au plateau
+    // Pre : Les entiers en paramètres sont la largeur/longueur du plateau
+    // On pourra l'écrire de cette maniere : piece.getCasesAccessibles(monPlateau.getXMax():Int, monPlateau.getYMax())
     func getCasesAccessibles(xMax : Int, yMax : Int) -> [String]
 
     // getX : Piece -> Int?
@@ -45,6 +47,7 @@ protocol PieceProtocol : Sequence {
     // Capture si case occupée par l'ennemie
     // Renvoie True si succes
     // Renvoie false si case occupée
+    // Appelée par la fonction "bouger" du type plateau
     func bouger(x : Int, y : Int) -> Bool
 
     // getJoueur : Piece -> Int | Vide
