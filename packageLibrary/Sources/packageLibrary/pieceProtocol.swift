@@ -3,9 +3,13 @@ import Foundation
 //Le type Piece va contenir les deux faces
 protocol PieceProtocol : Sequence {
     associatedtype Face
-
-    // initPiece : Face x Face -> Piece
-    init(face1 : Face, face2 : Face, idJoueur : Int?)
+    
+    // Initialise la piece avec 
+    //      - Deux Face (la première étant la face active, la seconde la face passive)
+    //      - Des coordonnées X et Y
+    //      - L'id du joueur ayant la piece (
+    // initPiece : Face x Face x Int x Int x Int-> Piece
+    init(face1 : Face, face2 : Face, x : Int, y : Int, idJoueur : Int?)
 
     // getCasesAccessibles : Piece x Int x Int-> [String]
     // Renvoie toute les cases accessibles à la piece  sous forme de liste de string
