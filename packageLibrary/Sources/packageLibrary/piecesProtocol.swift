@@ -51,6 +51,7 @@ protocol PiecesProtocol : Sequence {
 
     // getPiece : String -> Piece | Vide
     // Recupère une piece parmis celles possibles
+    // Si plusieurs pièces ont le même nom, peu importe, on récupère n'importe laquelle
     // Si piece n'est pas comprise dans la collection renvoie vide
     func getPiece(nomPiece : String) -> Piece?
 }
