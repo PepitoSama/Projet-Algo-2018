@@ -1,12 +1,13 @@
 import Foundation
 
-// Renvoie True si l'action est possible
+// Détermine si le choix en paramètre est valide ou non
+// Renvoie True si l'action est possible, false sinon
 func validChoice(choice : Int?, plateau : Plateau) -> Bool {
 	guard choice != nil else { return false }
 	if (choice != 1 || choice != 2)  {
 		return false
 	}
-	else if (choice == 2 && plateau.countReserve(monPlateau.getJoueurActif) <= 0) {
+	else if (choice == 2 && plateau.countReserve(monPlateau.getJoueurActif()) <= 0) {
 		return false
 	}
 	else {
@@ -14,8 +15,9 @@ func validChoice(choice : Int?, plateau : Plateau) -> Bool {
 	}
 }
 
+// Permet de connaitres les caractéristiques d'une piece sous forme de String
 // Renvoie un String contenant les infos de la piece
-func showPiece(piece : Piece?) -> String{
+func showPiece(_ piece : Piece?) -> String{
 	var txtPiece = ""
 	if piece == nil {
 		txtPiece += "Aucune piece dans cette case"
@@ -24,7 +26,7 @@ func showPiece(piece : Piece?) -> String{
 		txtPiece += piece.getNom
 		txtPiece += "\n"
 		txtPiece += "Case(s) accessibles"
-		for c in piece.getCasesAccessibles {
+		for c in piece.getCasesAccessibles() {
 			txtPiece += c + " "
 		}
 	}
@@ -42,8 +44,16 @@ func main() {
 			var choice : Int? = nil
 			// Demander nom aux joueurs (ou pas)
 			var monPlateau = Plateau(3,6, player1Name, player2Name)
-
-			while (monPlateau.aperdu == nil) {
+			//on choisit aléatoirement notre premier joueur et il devient le joueur actif
+			let idRandom = Int.random(in: 1 ... 2)
+			if idRandom == 1 {
+				monPlateau.setJoueurActif(getJoueurById(idRandom))
+				monPlateau.setJoueurPassif(getJoueurById(2))
+			} else {
+				monPlateau.setJoueurActif(getJoueurById(idRandom))
+				monPlateau.setJoueurPassif(getJoueurById(1))
+			}
+			while (monPlateau.aperdu(getJoueurById(1),getJoueurById(2)) == nil) {
 				//------ [CHOIX DE L'ACTION] ----------
 				print("C'est le tour de ") + monPlateau.getJoueurActif().getName()
 				print("Quel action voulez vous faire ?")
@@ -126,7 +136,7 @@ func main() {
 													print("Position Y de la case de destination")
 													if let toY = Int(readLine()) {
 														// Si la case est occupée
-														if selectedPiece.parachuter(piece, toX, toY) {
+														if monPlateau.parachuter(selectedPiece, toX, toY) {
 															didHeMove = true
 														} else {
 															print("Impossible de bouger la piece dans cette case, recommencez")
