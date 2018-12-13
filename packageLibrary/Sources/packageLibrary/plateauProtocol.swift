@@ -15,6 +15,13 @@ import Foundation
     // Les paramètre donnés sont les coordonnées X et Y max respectivement
     // Creer les joueurs avec les id 1 et 2 et les noms passé en paramère
     init(xmax: Int, ymax: Int, name1: String, name2: String)
+    
+    // bouger : Piece x Int x Int -> Bool
+    // Evolue si passe la ligne
+    // Capture si case occupée par l'ennemie
+    // Renvoie True si succes
+    // Renvoie false si case occupée
+    func bouger(x : Int, y : Int) -> Bool
 
     // getCase : Plateau x Int x Int -> Piece
     // Renvoie la piece, si il y en a une, sur la case donnée en paramètre
@@ -59,7 +66,12 @@ import Foundation
     // Post : Si la piece est présente, la fonction renvoie la piece
     // Post : Si pas de piece sur cette case, renvoie "nil"
     func getPieceFromPosition(coordX: Int, coordY: Int) -> Piece
-
+    
+    // getCasesAccessibles : Piece x Int x Int-> [String]
+    // Renvoie toute les cases accessibles à la piece  sous forme de liste de string
+    // Post : La case retournée doit appartenir au plateau
+    func getCasesAccessibles(xMax : Int, yMax : Int) -> [String]
+    
     // getJoueurById : Plateau x Int -> Joueur
     // Recupere un joueur a partir de son id (parametre)
     // Pre : L'id est soit 1, soit 2
