@@ -31,13 +31,26 @@ import Foundation
 
 // Le type Pieces (le s est important) va creer et stoquer toute les pieces existantes du jeu
 protocol PiecesProtocol : Sequence {
-    associatedtype Piece
+    associatedtype Piece : PieceProtocol
 
-    // initPieces : -> Pieces
-    // Creer et stoque toute les pieces possibles du jeu
+    // initPieces : -> Pieces | Vide
+    // Crée et stocke toute les pieces possibles du jeu
+    // Collection vide ou non après initialisation
+    // Post : 2 pieces ne peuvent avoir le meme nom
     init()
 
-    //getPiece : String -> Piece | Vide
+    // addNewPieces : Pieces -> Pieces
+    // ajoute autant de piece que nécessaire à la collection
+    // Si rien n'a été ajouté, renvoie la collection inchangée
+    func addNewPieces()-> Pieces
+
+    // changeStatePieces : Pieces -> Pieces
+    // Pre : la collection est déjà créée
+    // Si rien n'a été modifié, renvoie la collection inchangée
+    func changeStatePieces()-> Pieces
+
+    // getPiece : String -> Piece | Vide
     // Recupère une piece parmis celles possibles
+    // Si piece n'est pas comprise dans la collection renvoie vide
     func getPiece(nomPiece : String) -> Piece?
 }
